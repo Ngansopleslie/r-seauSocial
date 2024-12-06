@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\exampleControler;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/welcome', function () {
+    return view('acceuil.index');
 });
+
+Route::get('/example', function () {
+    return view('example');
+});
+Route::get('/user', [exampleControler::class,'user']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -27,5 +34,21 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//-----------------------------------------------------------------------------------
+//my own paths
+Route::get('/messages', function () {
+    return view('messages.index');});
+
+    Route::get('/conversation', function () {
+        return view('messages.conversation');});
+
+        Route::get('/notification', function () {
+            return view('notification.index');});
+
+            Route::get('/amies', function () {
+                return view('amies.index');});
+        
+    
 
 require __DIR__.'/auth.php';

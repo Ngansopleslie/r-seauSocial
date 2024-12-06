@@ -1,0 +1,35 @@
+img {
+    border-radius: 50%;
+    height: 50px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+h1 {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.logo {
+    height: 200;
+    width: 200;
+    border-radius: 0%;
+}
+
+.search {
+    width: 80%;
+}
+
+.color {
+    background-color: rgb(194, 160, 225);
+}
+.lineaire-simple{
+    background: linear-gradient(blue,pink);
+}
